@@ -1,0 +1,6 @@
+pycaret==1.0.0
+streamlit==0.73.1
+shap==0.32.0
+xgboost==0.90
+pandas
+numpy
