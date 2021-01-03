@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 
 model = load_model('deployment_30112020')
-
+@st.cache
 def predict(model, input_df):
     prediction_df = predict_model(estimator=model, data=input_df)
     prediction = prediction_df['Label'][0]
@@ -49,6 +49,7 @@ def ABS_SHAP(df_shap,df):
     ax.set_xlabel("SHAP Value (Red = Positive Impact)")
 
 #main function
+@st.cache
 def main():
     
     st.sidebar.info('This app is created to predict CO2 Solubility in Brine')
@@ -64,6 +65,7 @@ def main():
     st.image(image_CCS, use_column_width=False)
     st.text("(Image source: Global CCS Institute)")
     st.set_option('deprecation.showPyplotGlobalUse', False)
+    
 
     
 ##Single value Prediction
