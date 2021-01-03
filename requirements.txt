@@ -4,3 +4,4 @@ shap==0.32.0
 xgboost==0.90
 pandas
 numpy
+nltk
