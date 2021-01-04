@@ -146,9 +146,9 @@ def main():
             st.pyplot()
             plt.clf()
             
-            st.header("Prediction explanation for the entire dataset")
-            st.write("The plot below is the Collective Force Plot. It is built by rotating the individual force plot 90 degrees, and stack them horizontally for the entire dataset.")
-            st_shap(shap.force_plot(explainer.expected_value, shap_values, X), 400)
+            #st.header("Prediction explanation for the entire dataset")
+            #st.write("The plot below is the Collective Force Plot. It is built by rotating the individual force plot 90 degrees, and stack them horizontally for the entire dataset.")
+            #st_shap(shap.force_plot(explainer.expected_value, shap_values, X), 400)
             
             st.header("Dependence plots for each feature")
             st.write("The following plots are the partial dependence plots which each of them shows the marginal effect one or two features have on the predicted outcome of a machine learning model (J.H. Friedman, 2001). The partial dependence plot tells wether the relationship between the target and a feature is linear, monotonic or more complex.")
