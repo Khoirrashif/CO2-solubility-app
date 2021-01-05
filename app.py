@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import xgboost
+import catboost
+from catboost import *
 import shap
 import streamlit.components.v1 as components
 from PIL import Image
@@ -104,7 +105,9 @@ def main():
 
             # train catBoost model
             X,y = data, prediction['Label']
-            mod = xgboost.train({"learning_rate": 0.01}, xgboost.DMatrix(X, label=y), 100)
+            #mod = xgboost.train({"learning_rate": 0.01}, xgboost.DMatrix(X, label=y), 100)
+            mod = CatBoostRegressor(iterations=100, learning_rate=0.1, random_seed=123)
+            mod.fit(X, y, verbose=False, plot=False)
     
             # explain the model's predictions using SHAP
             # (same syntax works for LightGBM, CatBoost, scikit-learn and spark models)
