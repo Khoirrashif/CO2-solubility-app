@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Slugignore"
-exit 0
